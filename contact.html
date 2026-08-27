@@ -29,6 +29,42 @@
             <li>Email: ryeleighcoffee@gmail.com</li>
             <li>Facebook: Ryleigh's Coffee Shop</li>
         </ul>
+
+        <h3>Send Us a Message</h3>
+
+        <form>
+            <fieldset>
+                <legend>Your details</legend>
+
+                <p>
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name" name="name" required>
+                </p>
+
+                <p>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                    <label for="subject">Subject</label><br>
+                    <select id="subject" name="subject">
+                        <option value="product-question">Product question</option>
+                        <option value="order-status">Order status</option>
+                        <option value="wholesale">Wholesale enquiry</option>
+                        <option value="other">Something else</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </p>
+
+                <button type="submit">Send message</button>
+
+            </fieldset>
+        </form>
     </main>
 
     <footer>
