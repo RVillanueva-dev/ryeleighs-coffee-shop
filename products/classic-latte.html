@@ -35,6 +35,7 @@
     </header>
 
     <main>
+
         <img class="product-image"
              src="https://images.unsplash.com/photo-1561882468-9110e03e0f78"
              alt="A creamy classic latte in a coffee cup">
@@ -55,23 +56,129 @@
                 <th>Specification</th>
                 <th>Details</th>
             </tr>
+
             <tr>
                 <td>Type</td>
                 <td>Hot Coffee</td>
             </tr>
+
             <tr>
                 <td>Size</td>
                 <td>12 oz</td>
             </tr>
+
             <tr>
                 <td>Main Ingredients</td>
                 <td>Espresso and steamed milk</td>
             </tr>
+
             <tr>
                 <td>Price</td>
                 <td>₱100</td>
             </tr>
         </table>
+
+        <h2>Order Enquiry</h2>
+
+        <form>
+
+            <fieldset>
+                <legend>Order Details</legend>
+
+                <p>
+                    <label for="quantity">Quantity</label><br>
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="1"
+                        max="20"
+                    >
+                </p>
+
+                <fieldset>
+                    <legend>Delivery Method</legend>
+
+                    <p>
+                        <input
+                            type="radio"
+                            id="pickup"
+                            name="delivery"
+                            value="pickup"
+                        >
+                        <label for="pickup">Store Pickup</label>
+                    </p>
+
+                    <p>
+                        <input
+                            type="radio"
+                            id="standard-delivery"
+                            name="delivery"
+                            value="standard-delivery"
+                        >
+                        <label for="standard-delivery">Standard Delivery</label>
+                    </p>
+
+                    <p>
+                        <input
+                            type="radio"
+                            id="express-delivery"
+                            name="delivery"
+                            value="express-delivery"
+                        >
+                        <label for="express-delivery">Express Delivery</label>
+                    </p>
+
+                </fieldset>
+
+                <p>Optional Extras</p>
+
+                <p>
+                    <input
+                        type="checkbox"
+                        id="gift-wrapping"
+                        name="extras"
+                        value="gift-wrapping"
+                    >
+                    <label for="gift-wrapping">Gift Wrapping</label>
+                </p>
+
+                <p>
+                    <input
+                        type="checkbox"
+                        id="express-handling"
+                        name="extras"
+                        value="express-handling"
+                    >
+                    <label for="express-handling">Express Handling</label>
+                </p>
+
+                <p>
+                    <input
+                        type="checkbox"
+                        id="special-note"
+                        name="extras"
+                        value="special-note"
+                    >
+                    <label for="special-note">Special Note</label>
+                </p>
+
+                <p>
+                    <label for="email">Contact Email</label><br>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                    >
+                </p>
+
+                <button type="submit">Send Enquiry</button>
+
+            </fieldset>
+
+        </form>
+
     </main>
 
     <footer>
