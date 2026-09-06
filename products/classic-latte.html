@@ -1,9 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Latte - Ryleigh's Coffee Shop</title>
+
+    <link rel="stylesheet" href="../style.css">
 
     <style>
         .product-image {
@@ -12,10 +15,23 @@
             object-fit: cover;
         }
 
-        table, th, td {
-            border: 1px solid black;
+        table {
             border-collapse: collapse;
-            padding: 8px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #3A322C;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            color: var(--brand-color);
         }
     </style>
 </head>
