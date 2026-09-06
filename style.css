@@ -1,4 +1,4 @@
-/* ========================================
+    /* ========================================
    1. VARIABLES
 ======================================== */
 
@@ -94,24 +94,77 @@ footer {
 
 .product-card {
     background-color: #211D1A;
-    border: 1px solid #3A322C;
     border-radius: 12px;
     padding: 25px;
-    margin: 20px 0;
+    border-left: 6px solid var(--brand-color);
+    margin-bottom: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-3px);
-    border-color: var(--brand-color);
 }
 
 .product-card h2,
 .product-card h3 {
+    font-size: 24px;
     color: var(--brand-color);
 }
 
 .product-card p {
     color: var(--muted-grey);
+}
+
+
+/* ========================================
+   5. CONTACT FORM
+======================================== */
+
+fieldset {
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #3A322C;
+    background-color: #211D1A;
+}
+
+legend {
+    color: var(--brand-color);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+input,
+textarea,
+select {
+    padding: 12px;
+    border: 1px solid #3A322C;
+    border-radius: 6px;
+    background-color: #171514;
+    color: var(--dark-ink);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 2px;
+}
+
+button[type="submit"] {
+    background-color: var(--brand-color);
+    color: #171514;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9;
 }
