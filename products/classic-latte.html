@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Classic Latte - Ryleigh's Coffee Shop</title>
 
     <link rel="stylesheet" href="../style.css">
@@ -10,8 +14,10 @@
     <style>
         .product-image {
             width: 400px;
+            max-width: 100%;
             height: 400px;
             object-fit: cover;
+            border-radius: 10px;
         }
 
         table {
@@ -20,11 +26,14 @@
             margin-top: 20px;
         }
 
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid #3A322C;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
             text-align: left;
         }
@@ -33,40 +42,86 @@
             color: var(--brand-color);
         }
     </style>
+
 </head>
 
 <body>
 
+<div class="page">
+
     <header>
+
         <h1>Classic Latte</h1>
 
         <nav>
+
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="../about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="../contact.html">Contact</a>
+                </li>
             </ul>
+
         </nav>
+
     </header>
+
+
+    <aside>
+
+        <h2>Coffee Guide</h2>
+
+        <h3>Categories</h3>
+
+        <ul>
+            <li>Hot Coffee</li>
+            <li>Iced Coffee</li>
+            <li>Pastries</li>
+            <li>Sweet Treats</li>
+        </ul>
+
+        <h3>Quick Tip</h3>
+
+        <p>
+            Our Classic Latte is a great choice if you
+            prefer a smooth and creamy coffee drink.
+        </p>
+
+    </aside>
+
 
     <main>
 
-        <img class="product-image"
-             src="https://images.unsplash.com/photo-1561882468-9110e03e0f78"
-             alt="A creamy classic latte in a coffee cup">
+        <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1561882468-9110e03e0f78"
+            alt="A creamy classic latte in a coffee cup"
+        >
+
 
         <h2>About This Product</h2>
 
         <p>
-            Our Classic Latte is made with rich espresso and smooth steamed milk.
-            It has a creamy and balanced taste that is perfect for coffee lovers
-            who enjoy a simple and comforting drink. It can be enjoyed during a
-            busy morning or as a relaxing treat at any time of the day.
+            Our Classic Latte is made with rich espresso and
+            smooth steamed milk. It has a creamy and balanced
+            taste that is perfect for coffee lovers who enjoy
+            a simple and comforting drink. It can be enjoyed
+            during a busy morning or as a relaxing treat at
+            any time of the day.
         </p>
+
 
         <h2>Specifications</h2>
 
         <table>
+
             <tr>
                 <th>Specification</th>
                 <th>Details</th>
@@ -91,17 +146,27 @@
                 <td>Price</td>
                 <td>₱100</td>
             </tr>
+
         </table>
+
 
         <h2>Order Enquiry</h2>
 
         <form>
 
             <fieldset>
+
                 <legend>Order Details</legend>
 
+
                 <p>
-                    <label for="quantity">Quantity</label><br>
+
+                    <label for="quantity">
+                        Quantity
+                    </label>
+
+                    <br>
+
                     <input
                         type="number"
                         id="quantity"
@@ -109,86 +174,136 @@
                         min="1"
                         max="20"
                     >
+
                 </p>
 
+
                 <fieldset>
+
                     <legend>Delivery Method</legend>
 
                     <p>
+
                         <input
                             type="radio"
                             id="pickup"
                             name="delivery"
                             value="pickup"
                         >
-                        <label for="pickup">Store Pickup</label>
+
+                        <label for="pickup">
+                            Store Pickup
+                        </label>
+
                     </p>
 
+
                     <p>
+
                         <input
                             type="radio"
                             id="standard-delivery"
                             name="delivery"
                             value="standard-delivery"
                         >
-                        <label for="standard-delivery">Standard Delivery</label>
+
+                        <label for="standard-delivery">
+                            Standard Delivery
+                        </label>
+
                     </p>
 
+
                     <p>
+
                         <input
                             type="radio"
                             id="express-delivery"
                             name="delivery"
                             value="express-delivery"
                         >
-                        <label for="express-delivery">Express Delivery</label>
+
+                        <label for="express-delivery">
+                            Express Delivery
+                        </label>
+
                     </p>
 
                 </fieldset>
 
+
                 <p>Optional Extras</p>
 
+
                 <p>
+
                     <input
                         type="checkbox"
                         id="gift-wrapping"
                         name="extras"
                         value="gift-wrapping"
                     >
-                    <label for="gift-wrapping">Gift Wrapping</label>
+
+                    <label for="gift-wrapping">
+                        Gift Wrapping
+                    </label>
+
                 </p>
 
+
                 <p>
+
                     <input
                         type="checkbox"
                         id="express-handling"
                         name="extras"
                         value="express-handling"
                     >
-                    <label for="express-handling">Express Handling</label>
+
+                    <label for="express-handling">
+                        Express Handling
+                    </label>
+
                 </p>
 
+
                 <p>
+
                     <input
                         type="checkbox"
                         id="special-note"
                         name="extras"
                         value="special-note"
                     >
-                    <label for="special-note">Special Note</label>
+
+                    <label for="special-note">
+                        Special Note
+                    </label>
+
                 </p>
 
+
                 <p>
-                    <label for="email">Contact Email</label><br>
+
+                    <label for="email">
+                        Contact Email
+                    </label>
+
+                    <br>
+
                     <input
                         type="email"
                         id="email"
                         name="email"
                         required
                     >
+
                 </p>
 
-                <button type="submit">Send Enquiry</button>
+
+                <button type="submit">
+                    Send Enquiry
+                </button>
 
             </fieldset>
 
@@ -196,9 +311,16 @@
 
     </main>
 
+
     <footer>
-        <p>&copy; 2026 Ryleigh's Coffee Shop</p>
+
+        <p>
+            &copy; 2026 Ryleigh's Coffee Shop
+        </p>
+
     </footer>
+
+</div>
 
 </body>
 </html>

@@ -1,174 +1,411 @@
 /* ========================================
-
 1. VARIABLES
-   ======================================== */
+======================================== */
 
 :root {
---brand-color: #C49A6C;
---dark-ink: #E8DED3;
---muted-grey: #A69D95;
---light-background: #171514;
+    --brand-color: #C49A6C;
+    --dark-ink: #E8DED3;
+    --muted-grey: #A69D95;
+    --light-background: #171514;
+
+    --header-background: #211D1A;
+    --card-background: #211D1A;
+    --sidebar-background: #1D1917;
+    --footer-background: #121110;
+    --border-color: #3A322C;
 }
+
 
 /* ========================================
 2. BASE STYLES
 ======================================== */
 
 * {
-  box-sizing: border-box;
-  }
-
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-line-height: 1.6;
-color: var(--dark-ink);
-background-color: var(--light-background);
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-ink);
+    background-color: var(--light-background);
+}
+
+
 /* ========================================
-3. LAYOUT REGIONS
+3. PAGE LAYOUT - CSS GRID
+======================================== */
+
+.page {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    grid-template-areas:
+        "masthead masthead"
+        "side main"
+        "foot foot";
+
+    gap: 16px;
+}
+
+
+/* ========================================
+4. GRID AREA ASSIGNMENTS
 ======================================== */
 
 header {
-background-color: #211D1A;
-color: var(--dark-ink);
-padding: 35px 20px;
-text-align: center;
-border-bottom: 1px solid #3A322C;
+    grid-area: masthead;
 }
 
-header h1 {
-color: var(--brand-color);
-margin-bottom: 5px;
-}
-
-nav {
-background-color: #121110;
-text-align: center;
-padding: 15px;
-border-bottom: 1px solid #302A26;
-}
-
-nav ul {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-nav li {
-display: inline-block;
-margin: 0 15px;
-}
-
-nav a {
-color: var(--dark-ink);
-text-decoration: none;
-transition: color 0.3s ease;
-}
-
-nav a:hover {
-color: var(--brand-color);
+aside {
+    grid-area: side;
 }
 
 main {
-max-width: 1000px;
-margin: 0 auto;
-padding: 40px 20px;
+    grid-area: main;
 }
 
 footer {
-background-color: #121110;
-color: var(--muted-grey);
-text-align: center;
-padding: 25px;
-margin-top: 40px;
-border-top: 1px solid #302A26;
+    grid-area: foot;
 }
 
+
 /* ========================================
-4. COMPONENTS - PRODUCT CARDS
+5. HEADER
+======================================== */
+
+header {
+    background-color: var(--header-background);
+    color: var(--dark-ink);
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    color: var(--brand-color);
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+6. NAVIGATION - FLEXBOX
+======================================== */
+
+nav {
+    background-color: #121110;
+
+    text-align: center;
+
+    padding: 15px;
+
+    border-bottom: 1px solid #302A26;
+}
+
+nav ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: var(--dark-ink);
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--brand-color);
+}
+
+
+/* ========================================
+7. SIDEBAR
+======================================== */
+
+aside {
+    background-color: var(--sidebar-background);
+
+    border-left: 5px solid var(--brand-color);
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-left: 16px;
+
+    height: fit-content;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+aside h2 {
+    color: var(--brand-color);
+
+    margin-top: 0;
+}
+
+aside h3 {
+    color: var(--brand-color);
+
+    margin-bottom: 8px;
+}
+
+aside ul {
+    padding-left: 20px;
+}
+
+aside li {
+    margin-bottom: 8px;
+
+    color: var(--muted-grey);
+}
+
+aside p {
+    color: var(--muted-grey);
+}
+
+
+/* ========================================
+8. MAIN CONTENT
+======================================== */
+
+main {
+    max-width: 1000px;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    padding: 40px 20px;
+
+    min-width: 0;
+}
+
+main > p {
+    color: var(--muted-grey);
+
+    font-size: 18px;
+}
+
+main h2 {
+    color: var(--brand-color);
+}
+
+
+/* ========================================
+9. COMPONENTS - PRODUCT CARDS
+FLEXBOX
 ======================================== */
 
 .product-grid {
-display: flex;
-flex-wrap: wrap;
-gap: 24px;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 24px;
 }
 
 .product-card {
-flex: 1 1 240px;
-background-color: #211D1A;
-border-radius: 12px;
-padding: 25px;
-border-left: 6px solid var(--brand-color);
-margin-bottom: 0;
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-transition: transform 0.3s ease, border-color 0.3s ease;
+    flex: 1 1 240px;
+
+    min-width: 0;
+
+    background-color: var(--card-background);
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    border-left: 6px solid var(--brand-color);
+
+    margin-bottom: 0;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .product-card:hover {
-transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .product-card h2,
 .product-card h3 {
-font-size: 24px;
-color: var(--brand-color);
+    font-size: 24px;
+
+    color: var(--brand-color);
 }
 
 .product-card p {
-color: var(--muted-grey);
+    color: var(--muted-grey);
 }
 
+.product-card img {
+    max-width: 100%;
+    height: auto;
+
+    border-radius: 8px;
+}
+
+.product-card a {
+    color: var(--brand-color);
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.product-card a:hover {
+    text-decoration: underline;
+}
+
+
 /* ========================================
-5. CONTACT FORM
+10. CONTACT FORM
 ======================================== */
 
 fieldset {
-padding: 25px;
-border-radius: 12px;
-border: 1px solid #3A322C;
-background-color: #211D1A;
+    padding: 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border-color);
+
+    background-color: var(--card-background);
 }
 
 legend {
-color: var(--brand-color);
-font-size: 20px;
-font-weight: bold;
-padding: 0 10px;
+    color: var(--brand-color);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    padding: 0 10px;
 }
 
 input,
 textarea,
 select {
-padding: 12px;
-border: 1px solid #3A322C;
-border-radius: 6px;
-background-color: #171514;
-color: var(--dark-ink);
-font-family: Arial, sans-serif;
-font-size: 16px;
+    padding: 12px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 6px;
+
+    background-color: var(--light-background);
+
+    color: var(--dark-ink);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    max-width: 100%;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-outline: 3px solid var(--brand-color);
-outline-offset: 2px;
+    outline: 3px solid var(--brand-color);
+
+    outline-offset: 2px;
 }
 
 button[type="submit"] {
-background-color: var(--brand-color);
-color: #171514;
-padding: 12px 20px;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-font-size: 16px;
-font-weight: bold;
+    background-color: var(--brand-color);
+
+    color: #171514;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
 }
 
 button[type="submit"]:hover {
-opacity: 0.9;
+    opacity: 0.9;
+}
+
+
+/* ========================================
+11. FOOTER
+======================================== */
+
+footer {
+    background-color: var(--footer-background);
+
+    color: var(--muted-grey);
+
+    text-align: center;
+
+    padding: 25px;
+
+    border-top: 1px solid #302A26;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ========================================
+12. RESPONSIVE LAYOUT
+======================================== */
+
+@media (max-width: 700px) {
+
+    .page {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "masthead"
+            "main"
+            "side"
+            "foot";
+    }
+
+    aside {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    main {
+        padding: 30px 16px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
 }
