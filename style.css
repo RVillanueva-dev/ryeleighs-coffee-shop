@@ -34,18 +34,20 @@ body {
 
 
 /* ========================================
-3. PAGE LAYOUT - CSS GRID
+3. PAGE LAYOUT - MOBILE FIRST
 ======================================== */
 
 .page {
     display: grid;
 
-    grid-template-columns: 220px 1fr;
+    /* Mobile: single column */
+    grid-template-columns: 1fr;
 
     grid-template-areas:
-        "masthead masthead"
-        "side main"
-        "foot foot";
+        "masthead"
+        "main"
+        "side"
+        "foot";
 
     gap: 16px;
 }
@@ -153,6 +155,7 @@ aside {
     padding: 20px;
 
     margin-left: 16px;
+    margin-right: 16px;
 
     height: fit-content;
 
@@ -197,8 +200,9 @@ main {
 
     margin: 0 auto;
 
-    padding: 40px 20px;
+    padding: 30px 16px;
 
+    /* Prevents content from causing horizontal scrolling */
     min-width: 0;
 }
 
@@ -295,6 +299,8 @@ fieldset {
     border: 1px solid var(--border-color);
 
     background-color: var(--card-background);
+
+    min-width: 0;
 }
 
 legend {
@@ -310,6 +316,9 @@ legend {
 input,
 textarea,
 select {
+    width: 100%;
+    max-width: 100%;
+
     padding: 12px;
 
     border: 1px solid var(--border-color);
@@ -323,8 +332,10 @@ select {
     font-family: Arial, sans-serif;
 
     font-size: 16px;
+}
 
-    max-width: 100%;
+textarea {
+    resize: vertical;
 }
 
 input:focus,
@@ -359,7 +370,58 @@ button[type="submit"]:hover {
 
 
 /* ========================================
-11. FOOTER
+11. TABLES
+======================================== */
+
+table {
+    border-collapse: collapse;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid var(--border-color);
+}
+
+th,
+td {
+    padding: 10px;
+
+    text-align: left;
+
+    word-break: normal;
+}
+
+th {
+    color: var(--brand-color);
+}
+
+
+/* ========================================
+12. PRODUCT IMAGE
+======================================== */
+
+.product-image {
+    width: 400px;
+
+    max-width: 100%;
+
+    height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+/* ========================================
+13. FOOTER
 ======================================== */
 
 footer {
@@ -380,32 +442,38 @@ footer p {
 
 
 /* ========================================
-12. RESPONSIVE LAYOUT
+14. TABLET AND DESKTOP
 ======================================== */
 
-@media (max-width: 700px) {
+@media (min-width: 700px) {
 
     .page {
-        grid-template-columns: 1fr;
+        grid-template-columns: 220px 1fr;
 
         grid-template-areas:
-            "masthead"
-            "main"
-            "side"
-            "foot";
+            "masthead masthead"
+            "side main"
+            "foot foot";
+    }
+
+    header {
+        padding: 35px 20px;
     }
 
     aside {
         margin-left: 16px;
-        margin-right: 16px;
+        margin-right: 0;
     }
 
     main {
-        padding: 30px 16px;
+        padding: 40px 20px;
     }
 
     nav ul {
-        gap: 15px;
+        gap: 30px;
     }
 
+    .product-card {
+        padding: 25px;
+    }
 }
